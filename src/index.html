@@ -93,13 +93,15 @@
     ////////////////////////////
     var resultsProcessor = function(results) {
         return results.map(function(result){
-            var baseurl = "https://cs2100320024a648bca.blob.core.windows.net/azureblob-skillset-2-image-projection/";
-            result.imageurl = baseurl + result.metadata_storage_path + "/normalized_images_0.jpg"
+            var baseurl = "/api/HttpTrigger1?name=";
+            result.imageurl = baseurl + result.metadata_storage_path 
             console.log(result.imageurl)
             return result;
         });
     };
     ////////////////////////////////
+    ///+ "/normalized_images_0.jpg"
+    ///
     automagic.store.setResultsProcessor(resultsProcessor);
     automagic.addResults("results", { count: true }, resultTemplate);
     // Adds a pager control << 1 2 3 ... >>
