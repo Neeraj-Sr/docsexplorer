@@ -97,7 +97,7 @@
             baseurl = baseurl + result.metadata_storage_path 
             fetch(baseurl)
                 .then(response => console.log(response.status) || response) // output the status and return response
-                .then(response => response.text()) // send response body to next then chain
+                .then(response => console.log(response.text())) // send response body to next then chain
                 .then(body => result.imageurl = body) // you can use response body here
             return result;
         });
