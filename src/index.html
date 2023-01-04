@@ -96,7 +96,7 @@
             var baseurl = "https://docsexplorerfunc2.azurewebsites.net/api/HttpTriggerFunc?name=";
             baseurl = baseurl + result.metadata_storage_path 
             const fetchRes =  fetch(baseurl)            
-            result.imageurl = fetchRes.json()
+            result.imageurl = fetchRes.text()
             console.log(result.imageurl)
             return result;
         });
