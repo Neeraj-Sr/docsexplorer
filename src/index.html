@@ -91,12 +91,12 @@
 
     // add a results view using the template defined above    
     ////////////////////////////
-    var resultsProcessor = function(results) {
-        return results.map(function(result){
+    var resultsProcessor =  function(results) {
+        return results.map(async function(result){
             var baseurl = "https://docsexplorerfunc2.azurewebsites.net/api/HttpTriggerFunc?name=";
             baseurl = baseurl + result.metadata_storage_path 
-            const res = fetch(baseurl)
-            result.imageurl = res.body()
+            const fetchRes =  await fetch(baseurl)            
+            result.imageurl = await fetchRes.json()
             console.log(result.imageurl)
             return result;
         });
