@@ -94,7 +94,8 @@
     var resultsProcessor = function(results) {
         return results.map(function(result){
             var baseurl = "/api/HttpTrigger1?name=";
-            result.imageurl = baseurl + result.metadata_storage_path 
+            baseurl = baseurl + result.metadata_storage_path 
+            result.imageurl = fetch(baseurl)
             console.log(result.imageurl)
             return result;
         });
