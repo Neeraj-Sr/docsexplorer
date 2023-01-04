@@ -95,10 +95,17 @@
         return results.map(function(result){
             var baseurl = "https://docsexplorerfunc2.azurewebsites.net/api/HttpTriggerFunc?name=";
             baseurl = baseurl + result.metadata_storage_path 
+            // fetch(baseurl)
+            //     .then(response => console.log(response.status) || response) // output the status and return response
+            //     .then(response => result.imageurl = response.text()) // send response body to next then chain
+            //      // you can use response body here
             fetch(baseurl)
-                .then(response => console.log(response.status) || response) // output the status and return response
-                .then(response => result.imageurl = response.text()) // send response body to next then chain
-                 // you can use response body here
+                .then((response)=>{
+                    console.log(response.status);
+                    var url = response.text();
+                    console.log(url);
+                    result.imageurl = url;
+                })
             return result;
         });
     };
