@@ -91,7 +91,8 @@
   
     const resultTemplate = 
     `<div class="col-xs-12 col-sm-3 col-md-3 result_img" > 
-        <img id= {{imageid}} class="img-responsive result_img" src={{imageurl}} alt="image not found" /> 
+        <img id= {{imageid}} class="img-responsive result_img" src={{imageurl}} alt="image not found" />
+        <div class="resultDescription">{{keyphrases}}</div> 
     </div>` ;
         ////////////////////////////
     var resultsProcessor =  function(results) {
