@@ -107,7 +107,7 @@
             //         result.imageurl = url;
             //     })
             let xhr = new XMLHttpRequest();
-            xhr.open('GET',baseurl);
+            xhr.open('GET',baseurl,false);
                 try{
                     xhr.send();
                     if (xhr.status != 200){
