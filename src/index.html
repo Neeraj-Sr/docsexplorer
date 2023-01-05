@@ -86,7 +86,7 @@
     var automagic = new AzSearch.Automagic({ index: "azureblob-index-2", queryKey: "JdWASzhZY7mwPD7Qi8bpAIanSH0u29wFfbjRkujYBSAzSeB5dVeh", service: "search-svc", dnsSuffix:"search.windows.net" });
     
     const resultTemplate = `<div class="col-xs-12 col-sm-3 col-md-3 result_img" >
-            <img id={{imageid}} class="img-responsive result_img" src="getimageurl({{imageid}});" alt="image not found" />
+            <img id={{imageid}} class="img-responsive result_img" src="{getimageurl({{imageid}})}" alt="image not found" />
         </div><div class="col-xs-12 col-sm-9 col-md-9"><h4>{{imageTags}}</h4><div class="resultDescription">{{{imageCaption}}}</div></div>`;
 
     // add a results view using the template defined above   
