@@ -95,7 +95,7 @@
             console.log(baseurl);
             fetch(baseurl)
                 .then(response => console.log(response.status) || response) // output the status and return response
-                .then(response => this.src = response.text()) // send response body to next then chain
+                .then(response => this.src = response.text()); // send response body to next then chain
         })
     ////////////////////////////
     var resultsProcessor =  function(results) {
